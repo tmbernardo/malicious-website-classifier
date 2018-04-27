@@ -12,12 +12,15 @@ import xgboost as xgb
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import cross_val_score
 
 # ------------------------------
 # READ IN DATA
 # ------------------------------
 
 websites = pd.read_csv("malicious.csv")
+
+
 # print(websites.columns)
 # print(websites.shape) # x = websites, y = data points describing each website
 
@@ -49,18 +52,34 @@ websites = websites[websites["APP_PACKETS"] > 0]
 # # Remove any rows with missing values.
 websites = websites.dropna(axis=0)
 
+benign = websites[websites.Type == 0]
+malicious = websites[websites.Type != 0]
+print(benign.shape[0])
+print(malicious.shape[0])
+
+n = 107
+m = 21
+
+
+
 # # ------------------------------
 # # USE XGBOOST TO CLASSIFY WEBSITES
 # # ------------------------------
 
 # Initialize the model with 2 parameters -- number of clusters and random state.
-xgboost = xgb.XGBClassifier(max_depth=3, n_estimators=100, learning_rate=0.05)
+xgboost = xgb.XGBClassifier(max_depth=3, n_estimators=13, learning_rate=0.05)
+
 # Get only the numeric columns from websites.
 
 good_columns = websites._get_numeric_data()
 good_columns = good_columns.drop(["Type"], axis=1)
+
+Dtrain = xgb.DMatrix(good_columns, websites["Type"])
+x_parameters = {"max_depth": 2}
+# xgboost.fit(good_columns, websites["Type"])
+
+xgb.cv(x_parameters, Dtrain)
 # Fit the model using the good columns.
-xgboost.fit(good_columns, websites["Type"])
 # Get the cluster assignments.
 print("This is the score: " + str(xgboost.score(good_columns, websites["Type"])))
 
@@ -131,3 +150,5 @@ predictions = model.predict(test[columns])
 
 # Compute error between our test predictions and the actual values.
 print("This is the mean squared error: " + str(mean_squared_error(predictions, test[target])))
+
+
