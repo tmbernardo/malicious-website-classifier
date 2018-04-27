@@ -3,10 +3,10 @@
 # ------------------------------
 import warnings
 warnings.filterwarnings(action="ignore", module="scipy", message="^internal gelsd")
+warnings.filterwarnings(action="ignore", module="sklearn", message="^internal gelsd")
 
 import pandas as pd
 # import matplotlib.pyplot as plt
-from sklearn.ensemble import GradientBoostingClassifier
 
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
@@ -54,7 +54,7 @@ websites = websites.dropna(axis=0)
 # # ------------------------------
 
 # Initialize the model with 2 parameters -- number of clusters and random state.
-xgboost = xgb.XGBClassifier(max_depth=3, n_estimators=300, learning_rate=0.05)
+xgboost = xgb.XGBClassifier(max_depth=3, n_estimators=100, learning_rate=0.05)
 # Get only the numeric columns from websites.
 
 good_columns = websites._get_numeric_data()
