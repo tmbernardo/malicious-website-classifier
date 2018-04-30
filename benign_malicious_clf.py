@@ -52,13 +52,13 @@ websites = websites[websites["APP_PACKETS"] > 0]
 # # Remove any rows with missing values.
 websites = websites.dropna(axis=0)
 
-benign = websites[websites.Type == 0]
-malicious = websites[websites.Type != 0]
-print(benign.shape[0])
-print(malicious.shape[0])
+# benign = websites[websites.Type == 0]
+# malicious = websites[websites.Type != 0]
+# print(benign.shape[0])
+# print(malicious.shape[0])
 
-n = 107
-m = 21
+# n = 107
+# m = 21
 
 
 
