@@ -2,7 +2,9 @@
 
 ### Requirements
 * Conda: [conda.io](https://conda.io/docs/user-guide/install/index.html)
+
         or `$ brew install caskroom/cask/anaconda`
+        
         or `$ pip install conda`
 
 ### Usage
