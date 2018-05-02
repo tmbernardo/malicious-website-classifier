@@ -10,8 +10,6 @@ or `$ pip install conda`
 * Activate Environment: `$ source activate benign_malicious_clf`
 * Run Classifier Notebook: `$ jupyter notebook malben_clf.ipynb`
 
-## XGBoost Parameters
-
 ### Booster Parameters
 * eta = 0.18
 * min_child_weight = 3
