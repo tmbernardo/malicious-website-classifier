@@ -1,34 +1,9 @@
-# thrift-examples
-
-## Generate
-
-```bash
-thrift -out pygen/ --gen py example.thrift
-thrift -out jsgen/ --gen js:node example.thrift
-```
+# Malicious and Benign Website Classifier with XGBoost
 
 ### Requirements
-* Python: `$ pip install thrift`,
-* Node.js: `$ npm install thrift`,
-* Code generator: [Apache Thrift](https://thrift.apache.org/) (requires only for development).
+* Conda: [conda.io](https://conda.io/docs/user-guide/install/index.html) or `$ brew install caskroom/cask/anaconda`
 
-### Run
-* Server: `$ python ./server.py`,
-* Python client: `$ ./client.py` or `$ python client.py`,
-* Node.js client: `$ ./client.js` or `$ node client.js`.
-
-### Output
-```bash
-$ python server.py
-Starting python server...
-Hello from Python!
-Hello from JavaScript!
-```
-```bash
-$ python client.py
-\\ output
-```
-```bash
-$ node client.js
-\\ output
-```
+### Usage
+* Create Environment: `$ conda env create -f environment.yml`,
+* Activate Environment: `$ source activate benign_malicious_clf`,
+* Run Notebook: `$ jupyter notebook`
