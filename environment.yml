@@ -1,0 +1,21 @@
+# Create environment:
+# $ conda env create --force
+name: benign_malicious_clf
+channels:
+  - conda-forge
+dependencies:
+  - python = 3.6
+  - jupyter
+  - anaconda
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - graphviz
+  - python-graphviz
+  - pip
+  - pip:
+    - xgboost
+
+# Start environment
+# $ source activate benign_malicious_clf
