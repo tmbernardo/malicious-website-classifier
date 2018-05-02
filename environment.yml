@@ -8,7 +8,7 @@ dependencies:
   - jupyter
   - anaconda
   - matplotlib
-  - numpy
+  - numpy = 1.13.3
   - pandas
   - scikit-learn
   - graphviz
