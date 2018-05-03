@@ -5,6 +5,7 @@ channels:
   - conda-forge
 dependencies:
   - python = 3.6
+  - xgboost
   - jupyter
   - anaconda
   - matplotlib
@@ -14,9 +15,5 @@ dependencies:
   - graphviz
   - python-graphviz
   - pygraphviz
-  - pip
-  - pip:
-    - xgboost
-
 # Start environment
 # $ source activate benign_malicious_clf
