@@ -18,4 +18,4 @@ or `$ pip install conda`
 * subsample = 0.75
 * colsample_bytree = 0.75
 * lambda = 1
-* alpha = 0.05
+* alpha = 0.053
